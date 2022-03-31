@@ -1,10 +1,10 @@
 // import Star from "/images/Star1.png"
 
-export default function Card(props) {
+export default function Card({elem}) {
   let badgeText;
-  if(!props.openSpots){
+  if(!elem.openSpots){
     badgeText ="SOLD OUT"
-  }else if(props.location ==="Online"){
+  }else if(elem.location ==="Online"){
      badgeText="ONLINE"
   }
   return (
@@ -12,21 +12,21 @@ export default function Card(props) {
 
     <>
       <div className="card">
-        <img src={`/images/${props.coverImg}`} className="card-img-top" alt="person" />
+        <img src={`/images/${elem.coverImg}`} className="card-img-top" alt="person" />
         {badgeText && <div className="card--badge">{badgeText}</div>}
         <div className="card-body">
          <div className="body-rating">
              <span><img src= "/images/Star1.png" alt="start"/></span>
-             <span>{props.stats.rating}</span>
-            <span>({props.stats.reviewCount})</span>
+             <span>{elem.stats.rating}</span>
+            <span>({elem.stats.reviewCount})</span>
             <span className="rating-dot">.</span>
-            <span>{props.location}</span>
+            <span>{elem.location}</span>
          </div>
          <div className="body-desc">
-             <p>{props.title}</p>
+             <p>{elem.title}</p>
          </div>
          <div className="body-price">
-             <span>From ${props.price}</span>
+             <span>From ${elem.price}</span>
              <span>/</span>
              <span>person</span>
          </div>

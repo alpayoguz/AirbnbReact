@@ -6,7 +6,7 @@ import "./css/App.css"
 function App() {
   const cardData = CardDt.map(elem=>{
     console.log(elem);
-    return <Card key= {elem.id} {...elem}/>
+    return <Card key= {elem.id} elem ={elem}/>
     
   })
 
